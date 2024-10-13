@@ -15,7 +15,8 @@ function main()
   while true
     missile.Integrate(t, step, false, integ)
     fmtd = map(x ->@sprintf("%f", x), integ)
-    write(f, fmtd)
+    write(f, join(fmtd, ", "))
+    write(f, "\n")
     t += step
     if (integ[3]<0.0 && integ[6]<0.0) || t>100
       break
