@@ -61,7 +61,7 @@ function Integrate(t0::Float64, step::Float64, exact::Bool, integ::Vector{Float6
   deriv = ffunc(t0 + step, hv)
   for idx in 1:vecSz
     rkCoeffs[idx].k4 = deriv[idx]*step
-    integ = integ[idx] + (rkCoeffs[idx].k1 + 2.0 * rkCoeffs[idx].k2 + 2.0 * rkCoeffs[idx].k3 + rkCoeffs[idx].k4) / 6.0;
+    integ[idx] = integ[idx] + (rkCoeffs[idx].k1 + 2.0 * rkCoeffs[idx].k2 + 2.0 * rkCoeffs[idx].k3 + rkCoeffs[idx].k4) / 6.0;
   end
 end
 
