@@ -8,7 +8,7 @@ function main(first)
   α = 50.0
   local integ =[0.0, 0.0, 0.0, v0*cosd(α), 0.0, v0*sind(α), missile.propMass]
   local t = 0.0
-  local step = 0.001
+  local step = 0.01
   idx=0
   f = open("output.txt", "w")
   write(f,"t x y z vx vy vz pmass")

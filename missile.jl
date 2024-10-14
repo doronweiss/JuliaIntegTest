@@ -4,11 +4,11 @@ using Printf
 export Integrate
 export propMass, mdotOn
 
-propMass = 2000.0
+propMass = 4000.0
 mdotOn = propMass / 106.753
 mdotOff = 0.0
 inertMass = 1000.0
-thrust = 1000.0
+thrust = 2000.0
 
 #tburn = 107.1
 const vecSz = 7
