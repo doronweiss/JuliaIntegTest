@@ -2,8 +2,11 @@ module missile
 using Printf
 
 export Integrate
+export propMass
 
 propMass = 2000.0
+mdotOn = propMass / 106.9
+mdotOff = 0.0
 inertMass = 1000.0
 thrust = 1000.0
 
@@ -29,11 +32,11 @@ function ffunc(t::Float64, integ::Vector{Float64})
   # println(str)
   if engOn
     g =  0.0
-    mdot= -propMass / 106.9
+    mdot= -mdotOn
     acc = thrust / (inertMass + integ[7])
   else
     g =  -9.81
-    mdot= 0.0
+    mdot= mdotOff
     acc = 0.0
   end  
   deriv =[integ[4], integ[5], integ[6], acc*cos(gamma), 0.0, acc*sin(gamma) + g, mdot]
