@@ -40,7 +40,7 @@ function ffunc(t::Float64, integ::Vector{Float64})
 end
 
 function Integrate(t0::Float64, step::Float64, integ::Vector{Float64})::Vector{Float64}
-  hv = integ
+  hv = copy(integ)
   # step 1
   deriv=ffunc(t0, hv)
   for idx in 1:vecSz
