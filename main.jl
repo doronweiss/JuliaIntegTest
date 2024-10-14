@@ -3,19 +3,18 @@ import .missile
 using Printf
 
 
-function main()
+function main(first)
   v0=1.0
   α = 50.0
   local integ =[0.0, 0.0, 0.0, v0*cosd(α), 0.0, v0*sind(α), missile.propMass]
   local t = 0.0
-  local step = 0.025
+  local step = 0.001
   idx=0
   f = open("output.txt", "w")
   write(f,"t x y z vx vy vz pmass")
   write(f, "\n")
   prevX = 0.0
   prevZ = 0.0
-  first=true
   while true
     if first
       if integ[7]<missile.mdotOn*step
@@ -48,5 +47,6 @@ function main()
   idx+=1
 end
 
-main()
+main(true)
+main(false)
 println("*** finished ****")
