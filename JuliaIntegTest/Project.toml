@@ -1,0 +1,4 @@
+name = "JuliaIntegTest"
+uuid = "1afa65a8-4541-4b8d-9fdf-1556239c4d4e"
+authors = ["doron weiss <doron@10fs.co.il>"]
+version = "0.1.0"
