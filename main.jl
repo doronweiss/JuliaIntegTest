@@ -10,7 +10,7 @@ function main(first)
   local t = 0.0
   local step = 0.01
   idx=0
-  f = open("output.txt", "w")
+  f = open("/temp/output.txt", "w")
   write(f,"t x y z vx vy vz pmass")
   write(f, "\n")
   prevX = 0.0
